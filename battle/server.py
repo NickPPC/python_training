@@ -8,6 +8,11 @@ api = Api(app)
 
 seed = 'hashseed'
 
+# WARNING: This code is intentionnaly not secure !!!!!!!!!
+# IT is meant to demonstrate security flaws
+# Be careful when you run it
+# DO NOT run it on a publicly accessible server
+
 
 class HelloWorld(Resource):
     def get(self):
@@ -67,4 +72,4 @@ api.add_resource(Secrets, '/secrets')
 
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=False, host="0.0.0.0")
